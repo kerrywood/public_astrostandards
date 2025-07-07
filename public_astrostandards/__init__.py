@@ -3,42 +3,42 @@ import platform
 import ctypes
 
 if platform.system() == 'Linux':
-    from .V95.linux import AstroFuncDll
-    from .V95.linux import DllMainDll
-    from .V95.linux import ElOpsDll
-    from .V95.linux import EnvConstDll
-    from .V95.linux import ExtEphemDll
-    from .V95.linux import ObsDll
-    from .V95.linux import SatStateDll
-    from .V95.linux import SensorDll
-    from .V95.linux import Sgp4PropDll
-    from .V95.linux import SpVecDll
-    from .V95.linux import TimeFuncDll
-    from .V95.linux import TleDll
-    from .V95.linux import VcmDll
+    from .V96.linux import AstroFuncDll
+    from .V96.linux import DllMainDll
+    from .V96.linux import ElOpsDll
+    from .V96.linux import EnvConstDll
+    from .V96.linux import ExtEphemDll
+    from .V96.linux import ObsDll
+    from .V96.linux import SatStateDll
+    from .V96.linux import SensorDll
+    from .V96.linux import Sgp4PropDll
+    from .V96.linux import SpVecDll
+    from .V96.linux import TimeFuncDll
+    from .V96.linux import TleDll
+    from .V96.linux import VcmDll
 
 
 if platform.system() == 'Windows':
-    from .V95.win import AstroFuncDll
-    from .V95.win import DllMainDll
-    from .V95.win import ElOpsDll
-    from .V95.win import EnvConstDll
-    from .V95.win import ExtEphemDll
-    from .V95.win import ObsDll
-    from .V95.win import SatStateDll
-    from .V95.win import SensorDll
-    from .V95.win import Sgp4PropDll
-    from .V95.win import SpVecDll
-    from .V95.win import TimeFuncDll
-    from .V95.win import TleDll
-    from .V95.win import VcmDll
+    from .V96.win import AstroFuncDll
+    from .V96.win import DllMainDll
+    from .V96.win import ElOpsDll
+    from .V96.win import EnvConstDll
+    from .V96.win import ExtEphemDll
+    from .V96.win import ObsDll
+    from .V96.win import SatStateDll
+    from .V96.win import SensorDll
+    from .V96.win import Sgp4PropDll
+    from .V96.win import SpVecDll
+    from .V96.win import TimeFuncDll
+    from .V96.win import TleDll
+    from .V96.win import VcmDll
 
 #############################################################################
 # must be loaded after the Dll loads above (they are used by the libs)
 #############################################################################
 
 # helpers that you might need
-from .V95.utils import helpers 
+from .V96.utils import helpers 
 
 # -----------------------------------------------------------------------------------------------------
 def Cstr( S, slen=128 ):
