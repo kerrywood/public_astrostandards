@@ -12,6 +12,8 @@ __docformat__ = "restructuredtext"
 
 import ctypes
 import sys
+import os
+
 from ctypes import *  # noqa: F401, F403
 
 _int_types = (ctypes.c_int16, ctypes.c_int32)
@@ -488,6 +490,8 @@ import os.path
 import platform
 import re
 import sys
+import os
+
 
 
 def _environ_path(name):
@@ -857,7 +861,7 @@ del loaderclass
 
 # End loader
 
-add_library_search_dirs([])
+add_library_search_dirs([ os.environ['ASTROSTANDARDS_LIBDIR'] ] )
 
 # Begin libraries
 _libs["Obs.dll"] = load_library("Obs.dll")

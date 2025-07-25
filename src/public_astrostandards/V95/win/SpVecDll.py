@@ -14,6 +14,8 @@ import ctypes
 import sys
 import os
 
+import os
+
 from ctypes import *  # noqa: F401, F403
 
 _int_types = (ctypes.c_int16, ctypes.c_int32)
@@ -490,6 +492,8 @@ import os.path
 import platform
 import re
 import sys
+import os
+
 import os
 
 
