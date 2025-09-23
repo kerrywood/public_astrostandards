@@ -36,7 +36,6 @@ if platform.system() == 'Windows':
 #############################################################################
 # must be loaded after the Dll loads above (they are used by the libs)
 #############################################################################
-
 # helpers that you might need
 from .V96.utils import helpers 
 
@@ -98,7 +97,7 @@ def get_versions( ):
             continue
         vfc = getattr( lib, info[0] )
         vfc( vstr )
-        print('{:30}  {}'.format( D, vstr.value.decode('utf-8')))
+        print('{:30}  {}'.format( D, vstr.value.decode('utf-8')).strip() )
 
 # =====================================================================================================
 if __name__ == "__main__":
