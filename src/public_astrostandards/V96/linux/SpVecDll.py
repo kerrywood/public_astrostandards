@@ -856,9 +856,11 @@ def add_library_search_dirs(other_dirs):
 del loaderclass
 
 # End loader
-
-#add_library_search_dirs([])
-add_library_search_dirs([ os.path.abspath(__file__), os.environ['ASTROSTANDARDS_LIBDIR'] ] )
+if 'ASTROSTANDARDS_LIBDIR' in os.environ:
+    add_library_search_dirs([ os.environ['ASTROSTANDARDS_LIBDIR']]  )
+else:
+    add_library_search_dirs([ os.path.abspath(__file__) ] )
+    
 # Begin libraries
 _libs["libspvec.so"] = load_library("libspvec.so")
 
