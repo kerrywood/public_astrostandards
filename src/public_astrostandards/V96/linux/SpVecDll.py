@@ -857,8 +857,8 @@ del loaderclass
 
 # End loader
 
-add_library_search_dirs([])
-
+#add_library_search_dirs([])
+add_library_search_dirs([ os.path.abspath(__file__), os.environ['ASTROSTANDARDS_LIBDIR'] ] )
 # Begin libraries
 _libs["libspvec.so"] = load_library("libspvec.so")
 

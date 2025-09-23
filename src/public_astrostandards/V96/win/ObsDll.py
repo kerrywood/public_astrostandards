@@ -861,7 +861,8 @@ del loaderclass
 
 # End loader
 
-add_library_search_dirs([ os.environ['ASTROSTANDARDS_LIBDIR'] ] )
+#add_library_search_dirs([ os.environ['ASTROSTANDARDS_LIBDIR'] ] )
+add_library_search_dirs([ os.path.abspath(__file__), os.environ['ASTROSTANDARDS_LIBDIR'] ] )
 
 # Begin libraries
 _libs["Obs.dll"] = load_library("Obs.dll")
