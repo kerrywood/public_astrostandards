@@ -2,36 +2,60 @@
 import platform
 import ctypes
 
-if platform.system() == 'Linux':
-    from .V96.linux import AstroFuncDll
-    from .V96.linux import DllMainDll
-    from .V96.linux import ElOpsDll
-    from .V96.linux import EnvConstDll
-    from .V96.linux import ExtEphemDll
-    from .V96.linux import ObsDll
-    from .V96.linux import SatStateDll
-    from .V96.linux import SensorDll
-    from .V96.linux import Sgp4PropDll
-    from .V96.linux import SpVecDll
-    from .V96.linux import TimeFuncDll
-    from .V96.linux import TleDll
-    from .V96.linux import VcmDll
+try: 
+    if platform.system() == 'Linux':
+        from .V96.linux import AstroFuncDll
+        from .V96.linux import DllMainDll
+        from .V96.linux import ElOpsDll
+        from .V96.linux import EnvConstDll
+        from .V96.linux import ExtEphemDll
+        from .V96.linux import ObsDll
+        from .V96.linux import SatStateDll
+        from .V96.linux import SensorDll
+        from .V96.linux import Sgp4PropDll
+        from .V96.linux import SpVecDll
+        from .V96.linux import TimeFuncDll
+        from .V96.linux import TleDll
+        from .V96.linux import VcmDll
 
 
-if platform.system() == 'Windows':
-    from .V96.win import AstroFuncDll
-    from .V96.win import DllMainDll
-    from .V96.win import ElOpsDll
-    from .V96.win import EnvConstDll
-    from .V96.win import ExtEphemDll
-    from .V96.win import ObsDll
-    from .V96.win import SatStateDll
-    from .V96.win import SensorDll
-    from .V96.win import Sgp4PropDll
-    from .V96.win import SpVecDll
-    from .V96.win import TimeFuncDll
-    from .V96.win import TleDll
-    from .V96.win import VcmDll
+    if platform.system() == 'Windows':
+        from .V96.win import AstroFuncDll
+        from .V96.win import DllMainDll
+        from .V96.win import ElOpsDll
+        from .V96.win import EnvConstDll
+        from .V96.win import ExtEphemDll
+        from .V96.win import ObsDll
+        from .V96.win import SatStateDll
+        from .V96.win import SensorDll
+        from .V96.win import Sgp4PropDll
+        from .V96.win import SpVecDll
+        from .V96.win import TimeFuncDll
+        from .V96.win import TleDll
+        from .V96.win import VcmDll
+
+    FUNC_ORDER = (
+        EnvConstDll.EnvInit,
+        TimeFuncDll.TimeFuncInit,
+        AstroFuncDll.AstroFuncInit,
+        TleDll.TleInit,
+        SpVecDll.SpVecInit,
+        VcmDll.VcmInit,
+        ExtEphemDll.ExtEphInit,
+        Sgp4PropDll.Sgp4Init,
+        SatStateDll.SatStateInit,
+        SensorDll.SensorInit,
+        ObsDll.ObsInit,
+    )
+
+except Exception as e:
+    print()
+    print('*'*100)
+    print('CANNOT LOAD DLL / SHARED LIBS')
+    print('\t if you have not yet copied in your DLLs, this is normal')
+    print('\t download them and run python -m public_astrostandards.dll_installer <path to libraries>')
+    print('*'*100)
+    print()
 
 #############################################################################
 # must be loaded after the Dll loads above (they are used by the libs)
@@ -57,20 +81,6 @@ def init_main( logfile='aslog.txt', verbose=True ):
     if logfile: DllMainDll.OpenLogFile( Cstr( logfile, 512) )
     return ptr
 # =====================================================================================================
-FUNC_ORDER = (
-    EnvConstDll.EnvInit,
-    TimeFuncDll.TimeFuncInit,
-    AstroFuncDll.AstroFuncInit,
-    TleDll.TleInit,
-    SpVecDll.SpVecInit,
-    VcmDll.VcmInit,
-    ExtEphemDll.ExtEphInit,
-    Sgp4PropDll.Sgp4Init,
-    SatStateDll.SatStateInit,
-    SensorDll.SensorInit,
-    ObsDll.ObsInit,
-)
-
 # -----------------------------------------------------------------------------------------------------
 def init_all( logfile='aslog.txt', verbose=False ):
     ptr = DllMainDll.DllMainInit()
