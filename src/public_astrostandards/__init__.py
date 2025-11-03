@@ -54,6 +54,9 @@ except Exception as e:
     print('CANNOT LOAD DLL / SHARED LIBS')
     print('\t if you have not yet copied in your DLLs, this is normal')
     print('\t download them and run python -m public_astrostandards.dll_installer <path to libraries>')
+    print()
+    print('\t if you *HAVE* installed the shared libs, this could be a PATH / LD_LIBRARY_PATH problem')
+    print('\t be sure that your system knows where to look for the peer libraries')
     print('*'*100)
     print()
 
