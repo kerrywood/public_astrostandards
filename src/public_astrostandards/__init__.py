@@ -4,35 +4,35 @@ import ctypes
 
 try: 
     if platform.system() == 'Linux':
-        from .V96.linux import AstroFuncDll
-        from .V96.linux import DllMainDll
-        from .V96.linux import ElOpsDll
-        from .V96.linux import EnvConstDll
-        from .V96.linux import ExtEphemDll
-        from .V96.linux import ObsDll
-        from .V96.linux import SatStateDll
-        from .V96.linux import SensorDll
-        from .V96.linux import Sgp4PropDll
-        from .V96.linux import SpVecDll
-        from .V96.linux import TimeFuncDll
-        from .V96.linux import TleDll
-        from .V96.linux import VcmDll
+        from .V97.linux import AstroFuncDll
+        from .V97.linux import DllMainDll
+        from .V97.linux import ElOpsDll
+        from .V97.linux import EnvConstDll
+        from .V97.linux import ExtEphemDll
+        from .V97.linux import ObsDll
+        from .V97.linux import SatStateDll
+        from .V97.linux import SensorDll
+        from .V97.linux import Sgp4PropDll
+        from .V97.linux import SpVecDll
+        from .V97.linux import TimeFuncDll
+        from .V97.linux import TleDll
+        from .V97.linux import VcmDll
 
 
     if platform.system() == 'Windows':
-        from .V96.win import AstroFuncDll
-        from .V96.win import DllMainDll
-        from .V96.win import ElOpsDll
-        from .V96.win import EnvConstDll
-        from .V96.win import ExtEphemDll
-        from .V96.win import ObsDll
-        from .V96.win import SatStateDll
-        from .V96.win import SensorDll
-        from .V96.win import Sgp4PropDll
-        from .V96.win import SpVecDll
-        from .V96.win import TimeFuncDll
-        from .V96.win import TleDll
-        from .V96.win import VcmDll
+        from .V97.win import AstroFuncDll
+        from .V97.win import DllMainDll
+        from .V97.win import ElOpsDll
+        from .V97.win import EnvConstDll
+        from .V97.win import ExtEphemDll
+        from .V97.win import ObsDll
+        from .V97.win import SatStateDll
+        from .V97.win import SensorDll
+        from .V97.win import Sgp4PropDll
+        from .V97.win import SpVecDll
+        from .V97.win import TimeFuncDll
+        from .V97.win import TleDll
+        from .V97.win import VcmDll
 
     FUNC_ORDER = (
         EnvConstDll.EnvInit,
